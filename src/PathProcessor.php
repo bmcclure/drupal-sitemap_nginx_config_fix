@@ -19,7 +19,7 @@ class PathProcessor implements InboundPathProcessorInterface {
       list($check_path) = explode('?', $check_path);
     }
 
-    if ($check_path == '/sitemap.xml') {
+    if (strpos($check_path, '/sitemap.xml') !== FALSE) {
       \Drupal::request()->attributes->set('_disable_route_normalizer', TRUE);
     }
 
